@@ -754,7 +754,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"amet_1a2\": \"<string>\",\n  \"magna2\": \"<string>\",\n  \"fugiat_ba\": \"<string>\",\n  \"qui_fd\": \"<string>\"\n}",
+											"raw": "{\n\"email\": \"johndoe@doe.com\",\n\"password\": \"password1\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -776,7 +776,7 @@
 									},
 									"response": [
 										{
-											"name": "OK",
+											"name": "johndoe",
 											"originalRequest": {
 												"method": "POST",
 												"header": [
@@ -791,7 +791,55 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"amet_1a2\": \"<string>\",\n  \"magna2\": \"<string>\",\n  \"fugiat_ba\": \"<string>\",\n  \"qui_fd\": \"<string>\"\n}",
+													"raw": "{\n\"email\": \"johndoe@doe.com\",\n\"password\": \"password1\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/auth/login",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"auth",
+														"login"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"amet_1a2\": \"<string>\",\n  \"magna2\": \"<string>\",\n  \"fugiat_ba\": \"<string>\",\n  \"qui_fd\": \"<string>\"\n}"
+										},
+										{
+											"name": "janedoe",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n\"email\": \"janedoe@doe.com\",\n\"password\": \"password2\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
