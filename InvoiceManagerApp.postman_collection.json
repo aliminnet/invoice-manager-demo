@@ -1,0 +1,1171 @@
+{
+	"info": {
+		"_postman_id": "25024ddd-86bf-4812-bc10-27d63b72ff79",
+		"name": "Invoice Manager Demo Project OpenAPI Docs",
+		"description": "Initial Demo for Invoice Manager Application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32993622"
+	},
+	"item": [
+		{
+			"name": "v1",
+			"item": [
+				{
+					"name": "product",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "Get product by id",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{bearerToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/product/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"product",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/product/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"product",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Update product",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{bearerToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/product/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"product",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/product/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"product",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Delete product",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{bearerToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/product/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"product",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/product/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"product",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Get all products",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{bearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/v1/product",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"product"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/product",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"product"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\"\n  }\n]"
+								}
+							]
+						},
+						{
+							"name": "Save product",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{bearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/product",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"product"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/product",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"product"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "invoice",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "Get invoice by id",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{bearerToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/invoice/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"invoice",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/invoice/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"invoice",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"message\": \"<string>\",\n  \"status\": \"SUCCESS\",\n  \"data\": {}\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Get all invoices",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{bearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/v1/invoice",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"invoice"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/invoice",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"invoice"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"<string>\",\n  \"status\": \"SUCCESS\",\n  \"data\": {}\n}"
+								}
+							]
+						},
+						{
+							"name": "Save invoice",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{bearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"email\": \"<string>\",\n  \"amount\": \"<number>\",\n  \"billNo\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/invoice",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"invoice"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<long>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"email\": \"<string>\",\n  \"amount\": \"<number>\",\n  \"billNo\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/invoice",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"invoice"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"<string>\",\n  \"status\": \"SUCCESS\",\n  \"data\": {}\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "login",
+							"item": [
+								{
+									"name": "Login and get the token",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"amet_1a2\": \"<string>\",\n  \"magna2\": \"<string>\",\n  \"fugiat_ba\": \"<string>\",\n  \"qui_fd\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/auth/login",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"auth",
+												"login"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"amet_1a2\": \"<string>\",\n  \"magna2\": \"<string>\",\n  \"fugiat_ba\": \"<string>\",\n  \"qui_fd\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/auth/login",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"auth",
+														"login"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"amet_1a2\": \"<string>\",\n  \"magna2\": \"<string>\",\n  \"fugiat_ba\": \"<string>\",\n  \"qui_fd\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "validate",
+							"item": [
+								{
+									"name": "Validate the token",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/auth/validate",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"auth",
+												"validate"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/auth/validate",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"auth",
+														"validate"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"proident_a14\": \"<boolean>\",\n  \"ut_b3_\": \"<boolean>\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "activity",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "Get activity by id",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{bearerToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/activity/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"activity",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/activity/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"activity",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"message\": \"<string>\",\n  \"status\": \"SUCCESS\",\n  \"data\": {}\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "status",
+							"item": [
+								{
+									"name": "{status}",
+									"item": [
+										{
+											"name": "Get all activities by status",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{bearerToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/activity/status/:status",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"activity",
+														"status",
+														":status"
+													],
+													"variable": [
+														{
+															"key": "status",
+															"value": "SUCCESS",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/v1/activity/status/:status",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"v1",
+																"activity",
+																"status",
+																":status"
+															],
+															"variable": [
+																{
+																	"key": "status"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"message\": \"<string>\",\n  \"status\": \"SUCCESS\",\n  \"data\": {}\n}"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Get all activities",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{bearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/v1/activity",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"activity"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/activity",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"activity"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"<string>\",\n  \"status\": \"SUCCESS\",\n  \"data\": {}\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080"
+		}
+	]
+}
