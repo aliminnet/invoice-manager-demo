@@ -16,6 +16,3 @@ public class InvoiceManagerApplication {
 	}
 
 }
-
-//TODO:
-// Add caching ok
