@@ -24,6 +24,9 @@ class InvoiceServiceTest {
     @Mock
     private InvoiceMapper invoiceMapper;
 
+    @Mock
+    private ActivityService activityService;
+
     @InjectMocks
     private InvoiceService invoiceService;
 

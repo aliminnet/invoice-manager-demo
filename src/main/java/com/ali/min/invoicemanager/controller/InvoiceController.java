@@ -42,6 +42,21 @@ public class InvoiceController {
     }
 
     /**
+     * Get all invoices
+     *
+     * @return List of invoices
+     */
+    @GetMapping
+    @Operation(summary = "Get all invoices")
+    public ResponseEntity<ResultDTO> getAll() {
+        return ResponseEntity.ok(
+                ResultDTO.builder()
+                        .data(invoiceService.getInvoices())
+                        .status(Status.SUCCESS)
+                        .message("Invoices retrieved successfully").build());
+    }
+
+    /**
      * Get invoice by id
      *
      * @param id invoice id

@@ -2,6 +2,7 @@ package com.ali.min.invoicemanager.service;
 
 import com.ali.min.invoicemanager.dto.InvoiceDTO;
 import com.ali.min.invoicemanager.entity.InvoiceEntity;
+import com.ali.min.invoicemanager.enums.Status;
 import com.ali.min.invoicemanager.mapper.InvoiceMapper;
 import com.ali.min.invoicemanager.repository.InvoiceRepository;
 import lombok.Getter;
@@ -11,6 +12,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Service class for Invoice operations
@@ -29,6 +32,8 @@ public class InvoiceService {
 
     private final InvoiceMapper invoiceMapper;
 
+    private final ActivityService activityService;
+
     /**
      * Save invoice
      *
@@ -37,10 +42,22 @@ public class InvoiceService {
      */
     public InvoiceDTO saveInvoice(InvoiceDTO invoiceDTO) {
         if (!invoiceRepository.isWithinThreshold(invoiceDTO.getAmount(), limit, invoiceDTO.getEmail())){
+            activityService.saveActivity(invoiceDTO, Status.FAILED);
             throw new IllegalArgumentException("Amount exceeds the limit");
         }
         InvoiceEntity invoiceEntity  = invoiceMapper.toEntity(invoiceDTO);
-        return invoiceMapper.toDTO(invoiceRepository.save(invoiceEntity));
+        InvoiceDTO savedInvoiceDTO = invoiceMapper.toDTO(invoiceRepository.save(invoiceEntity));
+        activityService.saveActivity(savedInvoiceDTO, Status.SUCCESS);
+        return savedInvoiceDTO;
+    }
+
+    /**
+     * Get all invoices
+     *
+     * @return List of invoices
+     */
+    public List<InvoiceDTO> getInvoices() {
+        return invoiceRepository.findAll().stream().map(invoiceMapper::toDTO).collect(Collectors.toList());
     }
 
     /**
