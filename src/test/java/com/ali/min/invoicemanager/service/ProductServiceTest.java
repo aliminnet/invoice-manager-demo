@@ -1,13 +1,9 @@
 package com.ali.min.invoicemanager.service;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
-
 import com.ali.min.invoicemanager.dto.ProductDTO;
 import com.ali.min.invoicemanager.entity.ProductEntity;
 import com.ali.min.invoicemanager.mapper.ProductMapper;
 import com.ali.min.invoicemanager.repository.ProductRepository;
-import com.ali.min.invoicemanager.service.ProductService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -17,6 +13,9 @@ import org.mockito.MockitoAnnotations;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
 class ProductServiceTest {
 
