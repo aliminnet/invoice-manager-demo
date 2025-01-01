@@ -9,7 +9,7 @@ mvn clean install
 ## Running the app
 **_Option 1:_** Run with jar file
 ```shell
-java -jar target/invoice-manager-app-0.0.1-SNAPSHOT.jar
+java -jar target/invoice-manager-0.0.1-SNAPSHOT.jar
 ```
 
 **_Option 2:_** Run with docker
